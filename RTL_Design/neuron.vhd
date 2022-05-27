@@ -32,10 +32,11 @@ end entity neuron;
 architecture behavioral of neuron is
     signal index : integer := inputs;
 	type state is (idle, start, acum, act_func);
-	signal current_state, next_state : state;
+	signal output_s : std_logic;
+	signal current_state, next_state : state ;
 	signal input_s, weight_s : std_logic_vector(inputs - 1 downto 0);
-	signal done_s  : std_logic ; 
-	signal mul_value : std_logic_vector(inputs-1 downto 0); -- change this everytime you change the number of inputs     
+	signal done_s  : std_logic := '0'; 
+	signal mul_value : std_logic_vector(inputs-1 downto 0):= (others => '0'); -- change this everytime you change the number of inputs     
 	--signal popcount :std_logic_vector (inputs-1 downto 0) := (others => '0');
 	 
 begin
@@ -46,17 +47,18 @@ begin
 			if rst = '1' then
 				current_state <= idle;
 			else
-			current_state <= next_state;
+			    current_state <= next_state;
 			end if;
 		end if;
 	end process fsm_lower;
 
-	fsm_upper : process(current_state, start_i,index) is
+	fsm_upper : process(current_state, start_i,input_s, weight_s) is
 		variable popcount : std_logic_vector ( (inputs-1) downto 0) := (others => '0');
 	begin
 		case current_state is
 			when idle =>
 				done_s <= '0';
+				output_s <= '0';
 				if start_i = '1' then
 					next_state <= start;
 				else
@@ -67,7 +69,8 @@ begin
 				for i in 0 to (inputs-1) loop
                             mul_value(i) <= std_logic ( input_s(i) xnor weight_s(i));
                 end loop;
-                
+                output_s <= '0';
+                done_s <= '0';
 				next_state <= acum;
 
 			when acum =>
@@ -76,16 +79,16 @@ begin
 					popcount := popcount + mul_value(j);
 					--index <= index -1;
 				    end loop;
-				    
+				    output_s <= '0';
 				    next_state <= act_func;
-
+                    done_s <= '0';
 			when act_func =>
 				done_s     <= '1';
 				if popcount > (inputs-1)/2 then
 				    
-			        output_o <= '1';
+			        output_s <= '1';
 			    else 
-			        output_o <= '0';
+			        output_s <= '0';
 				    next_state <= idle;
                 end if;
 		end case;
@@ -94,4 +97,5 @@ begin
     input_s <= input_i;
     weight_s <= weight_i;  
     done_o <= done_s;
+    output_o <= output_s;
 end architecture behavioral;
