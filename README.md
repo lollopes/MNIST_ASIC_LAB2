@@ -17,19 +17,19 @@ MNIST classification using binary neural nets in pytorch. Made for LAB2 of Hardw
 
 ## Files to use for hardware testing 
 
-### Files below are the weights for a 4 layer network with 2 hidden layer. Considered as baseline 
+### Files below are the weights for a 4 layer network with 2 hidden layer considered as baseline  (you can find them in /baseline)
 
-W_fc1.csv -> input layer (IN=784,OUT=100)
+[W_fc1.csv ](https://github.com/lollopes/MNIST_ASIC_LAB2/blob/main/baseline/W_fc1.csv) -> input layer (IN=784,OUT=100)
 
-W_fc2.csv -> hidden1 layer (IN=100,OUT=100)
+[W_fc2.csv ](https://github.com/lollopes/MNIST_ASIC_LAB2/blob/main/baseline/W_fc2.csv) -> hidden1 layer (IN=100,OUT=100)
 
-W_fc3.csv -> hidden2 layer (IN=100,OUT=100)
+[W_fc3.csv ](https://github.com/lollopes/MNIST_ASIC_LAB2/blob/main/baseline/W_fc3.csv) (IN=100,OUT=100)
 
-W_fc4.csv -> output layer (IN=100,OUT=10)
+[W_fc4.csv ](https://github.com/lollopes/MNIST_ASIC_LAB2/blob/main/baseline/W_fc4.csv) -> output layer (IN=100,OUT=10)
 
 ### File below is the flatten(vectorized) input of the image 2
 
-input_image_flatten.csv -> input image (ROW=1,COL=784)
+[input_image_flatten.csv ](https://github.com/lollopes/MNIST_ASIC_LAB2/blob/main/baseline/input_image_flatten.csv) -> input image (ROW=1,COL=784)
 
 With this files we should be able to validate that our machine can classify the image of number 2. This is verified in software. 
 
