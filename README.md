@@ -23,7 +23,7 @@ MNIST classification using binary neural nets in pytorch. Made for LAB2 of Hardw
 
 [W_fc2.csv ](https://github.com/lollopes/MNIST_ASIC_LAB2/blob/main/baseline/W_fc2.csv) -> hidden1 layer (IN=100,OUT=100)
 
-[W_fc3.csv ](https://github.com/lollopes/MNIST_ASIC_LAB2/blob/main/baseline/W_fc3.csv) (IN=100,OUT=100)
+[W_fc3.csv ](https://github.com/lollopes/MNIST_ASIC_LAB2/blob/main/baseline/W_fc3.csv) -> hidden2 layer (IN=100,OUT=100)
 
 [W_fc4.csv ](https://github.com/lollopes/MNIST_ASIC_LAB2/blob/main/baseline/W_fc4.csv) -> output layer (IN=100,OUT=10)
 
