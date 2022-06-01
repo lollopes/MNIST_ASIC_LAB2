@@ -14,3 +14,22 @@ MNIST classification using binary neural nets in pytorch. Made for LAB2 of Hardw
 9. Lunch the notebook with `jupyter notebook`.
 10. We will work on the file called our_network.ipynb.
 ` 
+
+## Files to use for hardware testing 
+
+### Files below are the weights for a 4 layer network with 2 hidden layer. Considered as baseline 
+
+W_fc1.csv -> input layer (IN=784,OUT=100)
+
+W_fc2.csv -> hidden1 layer (IN=100,OUT=100)
+
+W_fc3.csv -> hidden2 layer (IN=100,OUT=100)
+
+W_fc4.csv -> output layer (IN=100,OUT=10)
+
+### File below is the flatten(vectorized) input of the image 2
+
+input_image_flatten.csv -> input image (ROW=1,COL=784)
+
+With this files we should be able to validate that our machine can classify the image of number 2. This is verified in software. 
+
