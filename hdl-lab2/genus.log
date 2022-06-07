@@ -1,0 +1,23 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 19.11-s087_1, built Tue Aug 13 02:48:07 PDT 2019
+Options: 
+Date:    Tue Jun 07 16:00:48 2022
+Host:    ce-ailab.ewi.tudelft.nl (x86_64 w/Linux 3.10.0-1160.62.1.el7.x86_64) (1core*8cpus*15physical cpus*Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz 28160KB) (24504072KB)
+PID:     80425
+OS:      Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+Checking out license: Genus_Synthesis
+
+Loading tool scripts...
+
+Finished loading tool scripts (7 seconds elapsed).
+
+WARNING: This version of the tool is 1029 days old.
+@genus:root: 1> 
+@genus:root: 1> source run_script.tcl
+File 'run_script.tcl' does not exist.
+@genus:root: 2> exit
