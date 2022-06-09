@@ -1,0 +1,40 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Jun  6 16:27:25 2022
+# Process ID: 37132
+# Current directory: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent17968 E:\Users\jccx1\Documents\TUDelft_projects_root\AI\Lab-2\MultiLayerPerceptron_NN\MultiLayerPerceptron_NN.xpr
+# Log file: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/vivado.log
+# Journal file: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.gen/sources_1'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/custom_package.vhd'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/neuron.vhd'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/layer.vhd'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/csv_file_reader_pkg.vhd'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/tb/layer_tb.vhd'.
+CRITICAL WARNING: [Project 1-19] Could not find the file 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/tb/neuron_tb.vhd'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'E:/Programs/Xilinx/Vivado/2020.2/data/ip'.
+open_project: Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1126.297 ; gain = 0.000
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/custom_package.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/csv_file_reader_pkg.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/layer.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/neuron.vhd] -no_script -reset -force -quiet
+remove_files  {E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/custom_package.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/csv_file_reader_pkg.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/layer.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/rtl/neuron.vhd}
+add_files -norecurse {E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_1.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_layer.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_4.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/custom_package.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_3.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_2.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_neuron.vhd}
+update_compile_order -fileset sources_1
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+add_files -fileset sim_1 -norecurse {E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_layer_testbench.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron_testbench.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_neuron_tb.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN_testbench.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_layer_testbench.vhd}
+update_compile_order -fileset sim_1
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Jun  6 16:33:27 2022...

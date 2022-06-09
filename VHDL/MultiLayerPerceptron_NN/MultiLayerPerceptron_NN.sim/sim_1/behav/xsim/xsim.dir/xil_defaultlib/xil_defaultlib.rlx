@@ -1,0 +1,16 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN.vhd,1654611610,vhdl,,,,bnn,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN_testbench.vhd,1654783681,vhdl,,,,bnn_testbench,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/custom_package.vhd,1654612554,vhdl,E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN_testbench.vhd,,,custom_types,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/fitst_layer_testbench.vhd,1654781738,vhdl,,,,first_layer_testbench,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd,1654783630,vhdl,,,,integer_neuron,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron_testbench.vhd,1654782959,vhdl,,,,integer_neuron_testbench,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd,1654611558,vhdl,,,,layer_1,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer2.vhd,1654611576,vhdl,,,,layer_2,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer3.vhd,1654611583,vhdl,,,,layer_3,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layerout.vhd,1654611590,vhdl,,,,layer_out,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/neuron.vhd,1654609485,vhdl,,,,binary_neuron,,,,,,,,
+E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/out_binary_neuron.vhd,1654609485,vhdl,,,,out_binary_neuron,,,,,,,,

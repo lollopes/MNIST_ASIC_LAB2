@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Jun  9 16:10:55 2022
+# Process ID: 30644
+# Current directory: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.runs/synth_1
+# Command line: vivado.exe -log BNN.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source BNN.tcl
+# Log file: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.runs/synth_1/BNN.vds
+# Journal file: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source BNN.tcl -notrace

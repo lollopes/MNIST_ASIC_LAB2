@@ -1,0 +1,169 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Jun  6 17:13:36 2022
+# Process ID: 24295
+# Current directory: /data/home/bnn-prj-15/data_sources/test
+# Command line: vivado
+# Log file: /data/home/bnn-prj-15/data_sources/test/vivado.log
+# Journal file: /data/home/bnn-prj-15/data_sources/test/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /data/home/bnn-prj-15/bnn_project/bnn_project.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config /data/home/bnn-prj-15/bnn_project/neuron_tb_behav.wcfg
+source first_layer_testbench.tcl
+run all
+close_sim
+launch_simulation
+open_wave_config /data/home/bnn-prj-15/bnn_project/neuron_tb_behav.wcfg
+source first_layer_testbench.tcl
+current_wave_config {neuron_tb_behav.wcfg}
+add_wave {{/first_layer_testbench/weight_i}} 
+run all
+save_wave_config {/data/home/bnn-prj-15/bnn_project/neuron_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /data/home/bnn-prj-15/bnn_project/neuron_tb_behav.wcfg
+source first_layer_testbench.tcl
+close_sim
+launch_simulation
+open_wave_config /data/home/bnn-prj-15/bnn_project/neuron_tb_behav.wcfg
+source first_layer_testbench.tcl
+set_property top integer_neuron_testbench [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+open_wave_config /data/home/bnn-prj-15/bnn_project/neuron_tb_behav.wcfg
+source integer_neuron_testbench.tcl
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 39
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 41
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 43
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 55
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 56
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 57
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 58
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 60
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 64
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 65
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 67
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 68
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 67
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 68
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 72
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 73
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 81
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 82
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 84
+add_bp {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} 86
+restart
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 55
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 39
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 41
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 43
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 56
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 57
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 58
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 60
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 64
+remove_bps -file {/data/home/bnn-prj-15/hdl/integer_neuron.vhd} -line 65
+restart
+relaunch_sim
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+run all
+step
+step
+step
+close_sim
+close_sim
+set_property top first_layer_testbench [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+open_wave_config /data/home/bnn-prj-15/bnn_project/neuron_tb_behav.wcfg
+source first_layer_testbench.tcl
+close_sim
+launch_simulation
+open_wave_config /data/home/bnn-prj-15/bnn_project/neuron_tb_behav.wcfg

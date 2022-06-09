@@ -1,0 +1,1 @@
+-wto "e76e05d07e494408ac9025c9f6c3a88e" --incr --debug "typical" --relax --mt "2" -L "xil_defaultlib" -L "secureip" --snapshot "BNN_testbench_behav" "xil_defaultlib.BNN_testbench" -log "elaborate.log" 

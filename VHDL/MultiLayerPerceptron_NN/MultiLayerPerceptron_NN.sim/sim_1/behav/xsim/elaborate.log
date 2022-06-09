@@ -1,0 +1,27 @@
+Vivado Simulator 2020.2
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: E:/Programs/Xilinx/Vivado/2020.2/bin/unwrapped/win64.o/xelab.exe -wto e76e05d07e494408ac9025c9f6c3a88e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L secureip --snapshot BNN_testbench_behav xil_defaultlib.BNN_testbench -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package std.standard
+Compiling package std.textio
+Compiling package ieee.std_logic_1164
+Compiling package ieee.numeric_std
+Compiling package ieee.std_logic_textio
+Compiling package xil_defaultlib.custom_types
+Compiling package ieee.std_logic_arith
+Compiling package ieee.std_logic_unsigned
+Compiling architecture logic of entity xil_defaultlib.integer_neuron [\integer_neuron(inputs=784)\]
+Compiling architecture rtl of entity xil_defaultlib.layer_1 [layer_1_default]
+Compiling architecture behavioral of entity xil_defaultlib.binary_neuron [\binary_neuron(inputs=100)\]
+Compiling architecture rtl of entity xil_defaultlib.layer_2 [layer_2_default]
+Compiling architecture rtl of entity xil_defaultlib.layer_3 [\layer_3(outputs=100)\]
+Compiling architecture behavioral of entity xil_defaultlib.out_binary_neuron [\out_binary_neuron(inputs=100)\]
+Compiling architecture rtl of entity xil_defaultlib.layer_out [\layer_out(inputs=100,outputs=10...]
+Compiling architecture structure of entity xil_defaultlib.BNN [\BNN(layer_1_in_dim=784,layer_2_...]
+Compiling architecture tb of entity xil_defaultlib.bnn_testbench
+Built simulation snapshot BNN_testbench_behav

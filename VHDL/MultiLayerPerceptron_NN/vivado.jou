@@ -1,0 +1,126 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Jun  7 15:41:14 2022
+# Process ID: 32836
+# Current directory: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12268 E:\Users\jccx1\Documents\TUDelft_projects_root\AI\Lab-2\MultiLayerPerceptron_NN\MultiLayerPerceptron_NN.xpr
+# Log file: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/vivado.log
+# Journal file: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_4.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_layer.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_3.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_2.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_1.vhd] -no_script -reset -force -quiet
+remove_files  {E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_4.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_layer.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_3.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_2.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer_1.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_layer_testbench.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_layer_testbench.vhd
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN_testbench.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN_testbench.vhd
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_layer_testbench.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_layer_testbench.vhd
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_neuron_tb.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_neuron_tb.vhd
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron_testbench.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron_testbench.vhd
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_neuron.vhd] -no_script -reset -force -quiet
+remove_files  E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/binary_neuron.vhd
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd] -no_script -reset -force -quiet
+remove_files  E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/tb/layer_tb.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/tb/neuron_tb.vhd] -no_script -reset -force -quiet
+remove_files  -fileset sim_1 {E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/tb/layer_tb.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/tb/neuron_tb.vhd}
+add_files -norecurse {E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/out_binary_neuron.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layerout.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/neuron.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer2.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/custom_package.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer3.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd}
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/custom_types_package.vhd] -no_script -reset -force -quiet
+remove_files  E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/custom_types_package.vhd
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+set_property part xc7vx550t_CIVffg1927-2L [current_project]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_project
+open_project E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/fpga/zynq_fpga/zynq_fpga.xpr
+update_compile_order -fileset sources_1
+close_project
+open_project E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.xpr
+update_compile_order -fileset sources_1
+set_property part xc7z020clg400-1 [current_project]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+reset_run synth_1
+close_project
+open_project E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/zynq_sim.xpr
+update_compile_order -fileset sources_1
+current_fileset -simset [ get_filesets sim_2 ]
+launch_simulation -simset [get_filesets sim_2 ]
+open_wave_config E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/tb_multiplier_behav.wcfg
+source tb_multiplier.tcl
+close_sim
+launch_simulation -simset [get_filesets sim_2 ]
+open_wave_config E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/tb_multiplier_behav.wcfg
+source tb_multiplier.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+add_bp {E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/zynq_sim.srcs/sim_2/new/tb_multiplier.vhd} 90
+restart
+run all
+step
+step
+step
+add_bp {E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/zynq_sim.srcs/sim_2/new/tb_multiplier.vhd} 91
+remove_bps -file {E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/zynq_sim.srcs/sim_2/new/tb_multiplier.vhd} -line 90
+run all
+add_bp {E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/zynq_sim.srcs/sim_2/new/tb_multiplier.vhd} 94
+run 350 ns
+step
+step
+run all
+remove_bps -file {E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/zynq_sim.srcs/sim_2/new/tb_multiplier.vhd} -line 91
+remove_bps -file {E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/zynq_sim.srcs/sim_2/new/tb_multiplier.vhd} -line 94
+close_sim
+launch_simulation -simset [get_filesets sim_2 ]
+open_wave_config E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/sim/zynq_sim/tb_multiplier_behav.wcfg
+source tb_multiplier.tcl
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+close_sim
+close_project
+open_project E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/fpga/zynq_fpga/zynq_fpga.xpr
+reset_run synth_1
+update_compile_order -fileset sources_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/rtl/platform/cache_cntrl_L1.vhd] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/rtl/platform/cache_cntrl_L2.vhd] -no_script -reset -force -quiet
+remove_files  {E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/rtl/platform/cache_cntrl_L1.vhd E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/rtl/platform/cache_cntrl_L2.vhd}
+write_hw_platform -fixed -force -file E:/Users/jccx1/Documents/TUDelft_projects_root/PDP/fpga/zynq_fpga/design_2_wrapper.xsa
+update_module_reference design_2_cpu_0_0
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 8
+wait_on_run impl_1
+reset_run synth_1

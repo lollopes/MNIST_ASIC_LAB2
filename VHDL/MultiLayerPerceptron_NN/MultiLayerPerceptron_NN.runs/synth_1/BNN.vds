@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Jun  9 16:10:55 2022
+# Process ID: 30644
+# Current directory: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.runs/synth_1
+# Command line: vivado.exe -log BNN.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source BNN.tcl
+# Log file: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.runs/synth_1/BNN.vds
+# Journal file: E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/MultiLayerPerceptron_NN/MultiLayerPerceptron_NN.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source BNN.tcl -notrace
+Command: synth_design -top BNN -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 24268
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1126.629 ; gain = 0.000
+---------------------------------------------------------------------------------

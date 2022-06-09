@@ -1,0 +1,8 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../../hdl/custom_package.vhd" \
+"../../../../../hdl/integer_neuron.vhd" \
+"../../../../../hdl/integer_neuron_testbench.vhd" \
+
+# Do not sort compile order
+nosort

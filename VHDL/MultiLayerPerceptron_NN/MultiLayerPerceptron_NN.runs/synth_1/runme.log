@@ -1,0 +1,264 @@
+
+*** Running vivado
+    with args -log BNN.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source BNN.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source BNN.tcl -notrace
+Command: synth_design -top BNN -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 23420
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1127.113 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'BNN' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN.vhd:31]
+	Parameter layer_1_in_dim bound to: 784 - type: integer 
+	Parameter layer_2_in_dim bound to: 100 - type: integer 
+	Parameter layer_3_in_dim bound to: 100 - type: integer 
+	Parameter layer_out_in_dim bound to: 100 - type: integer 
+	Parameter layer_1_out_dim bound to: 100 - type: integer 
+	Parameter layer_2_out_dim bound to: 100 - type: integer 
+	Parameter layer_3_out_dim bound to: 100 - type: integer 
+	Parameter layer_out_out_dim bound to: 10 - type: integer 
+	Parameter inputs bound to: 784 - type: integer 
+	Parameter outputs bound to: 100 - type: integer 
+INFO: [Synth 8-3491] module 'layer_1' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:13' bound to instance 'layer_inst_1' of component 'layer_1' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/BNN.vhd:150]
+INFO: [Synth 8-638] synthesizing module 'layer_1' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:30]
+	Parameter inputs bound to: 784 - type: integer 
+	Parameter outputs bound to: 100 - type: integer 
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+INFO: [Synth 8-638] synthesizing module 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:23]
+	Parameter inputs bound to: 784 - type: integer 
+WARNING: [Synth 8-614] signal 'mul_value' is read in the process but is not in the sensitivity list [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:48]
+INFO: [Synth 8-256] done synthesizing module 'integer_neuron' (1#1) [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:23]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-3491] module 'integer_neuron' declared at 'E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/integer_neuron.vhd:6' bound to instance 'NEURONS' of component 'integer_neuron' [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:56]
+INFO: [Common 17-14] Message 'Synth 8-3491' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+	Parameter inputs bound to: 784 - type: integer 
+INFO: [Synth 8-256] done synthesizing module 'layer_1' (2#1) [E:/Users/jccx1/Documents/TUDelft_projects_root/AI/Lab-2/hdl/layer1.vhd:30]
+
+*** Running vivado
+    with args -log BNN.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source BNN.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source BNN.tcl -notrace
+Command: synth_design -top BNN -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 24268
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:08 . Memory (MB): peak = 1126.629 ; gain = 0.000
+---------------------------------------------------------------------------------
