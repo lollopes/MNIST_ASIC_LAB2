@@ -1,4 +1,5 @@
 library IEEE;
+library work;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
 use work.custom_types.all;
@@ -15,11 +16,11 @@ entity BNN is
             layer_out_out_dim: integer:= outputs_out
     );
     port(
-        clk         : in std_logic;
+        CLK         : in std_logic;
         rst         : in std_logic;
         start       : in std_logic;
-        input_vector : in integer_array(layer_1_in_dim-1 downto 0);
-        weight_matrix_1_port : in weight_matrix_integers(layer_1_out_dim-1 downto 0);
+        input_vector : in signed_array(layer_1_in_dim-1 downto 0);
+        weight_matrix_1_port : in weight_matrix_signed(layer_1_out_dim-1 downto 0);
         weight_matrix_2_port : in weight_matrix_2(layer_2_out_dim -1 downto 0);
         weight_matrix_3_port : in weight_matrix_3(layer_3_out_dim -1 downto 0);
         weight_matrix_out_port : in weight_matrix_out(layer_out_out_dim -1 downto 0);
@@ -47,11 +48,11 @@ architecture structure of BNN is
     signal output_2 :std_logic_vector ( 0 to outputs_2-1);
     
     -- Signals LAYER 3
-    signal start_3  : std_logic := '0';
-	signal done_3   : std_logic;
-	signal input_3  : std_logic_vector(0 to inputs_3 - 1);--! Network input = ouput of previous layer
-    --signal weight_3 : weight_matrix_3 (0 to outputs_3 -1);
-    signal output_3 :std_logic_vector ( 0 to outputs_3-1);
+--    signal start_3  : std_logic := '0';
+--	signal done_3   : std_logic;
+--	signal input_3  : std_logic_vector(0 to inputs_3 - 1);--! Network input = ouput of previous layer
+--    --signal weight_3 : weight_matrix_3 (0 to outputs_3 -1);
+--    signal output_3 :std_logic_vector ( 0 to outputs_3-1);
     
     -- Signals LAYER OUT
     signal start_out  : std_logic := '0';
@@ -64,18 +65,18 @@ architecture structure of BNN is
     
     component layer_1 is
         generic(
-            inputs  : natural := 784;       --! Network inputs = number of neurons in the previous layer
+            inputs  : natural := 784;         --! Network inputs = number of neurons in the previous layer
             outputs : natural := 100        --! Network outputs = number of neurons in the present layer
         );
         port(
-            clk      : in  std_logic;	--! Clock input
-            rst      : in  std_logic;	--! Reset output
-            start_i  : in  std_logic;	--! Start input, indicates to start the calculation
-            input_i  : in  integer_array(0 to inputs-1) ;--! Network input = ouput of previous layer
-            weight_i : in  weight_matrix_integers (outputs -1 downto 0);
-            output_o : out std_logic_vector(outputs - 1 downto 0) := (others => '0'); --! Network output
-            done_o   : out std_logic                              := '0' --! Done output, indicates completion -- signal to the next layer to begin the calculation
-                                                                          -- done_o of previous layer is start_i of the next layer
+            CLK      : in  std_logic;	
+            rst      : in  std_logic;	
+            start_i  : in  std_logic;	
+            input_i  : in  signed_array(0 to inputs - 1);   
+            weight_i : in  weight_matrix_signed (outputs - 1 downto 0);
+            output_o : out std_logic_vector(outputs - 1 downto 0) := (others => '0'); 
+            done_o   : out std_logic  := '0' 
+                                                                          
         );
     end component layer_1;
     
@@ -85,7 +86,7 @@ architecture structure of BNN is
             outputs : natural := 100        --! Network outputs = number of neurons in the present layer
         );
         port(
-            clk      : in  std_logic;	--! Clock input
+            CLK      : in  std_logic;	--! Clock input
             rst      : in  std_logic;	--! Reset output
             start_i  : in  std_logic;	--! Start input, indicates to start the calculation
             input_i  : in  std_logic_vector(inputs - 1 downto 0);--! Network input = ouput of previous layer
@@ -96,22 +97,22 @@ architecture structure of BNN is
         );
     end component;
     
-   component layer_3 is
-        generic(
-            inputs  : natural := 100;         --! Network inputs = number of neurons in the previous layer
-            outputs : natural := 100        --! Network outputs = number of neurons in the present layer
-        );
-        port(
-            clk      : in  std_logic;	--! Clock input
-            rst      : in  std_logic;	--! Reset output
-            start_i  : in  std_logic;	--! Start input, indicates to start the calculation
-            input_i  : in  std_logic_vector(inputs - 1 downto 0);--! Network input = ouput of previous layer
-            weight_i : in  weight_matrix_3(outputs -1 downto 0);
-            output_o : out std_logic_vector(outputs - 1 downto 0) := (others => '0'); --! Network output
-            done_o   : out std_logic                              := '0' --! Done output, indicates completion -- signal to the next layer to begin the calculation
-                                                                          -- done_o of previous layer is start_i of the next layer
-        );
-    end component;
+--   component layer_3 is
+--        generic(
+--            inputs  : natural := 100;         --! Network inputs = number of neurons in the previous layer
+--            outputs : natural := 100        --! Network outputs = number of neurons in the present layer
+--        );
+--        port(
+--            CLK      : in  std_logic;	--! Clock input
+--            rst      : in  std_logic;	--! Reset output
+--            start_i  : in  std_logic;	--! Start input, indicates to start the calculation
+--            input_i  : in  std_logic_vector(inputs - 1 downto 0);--! Network input = ouput of previous layer
+--            weight_i : in  weight_matrix_3(outputs -1 downto 0);
+--            output_o : out std_logic_vector(outputs - 1 downto 0) := (others => '0'); --! Network output
+--            done_o   : out std_logic                              := '0' --! Done output, indicates completion -- signal to the next layer to begin the calculation
+--                                                                          -- done_o of previous layer is start_i of the next layer
+--        );
+--    end component;
 
    component layer_out is
         generic(
@@ -119,7 +120,7 @@ architecture structure of BNN is
             outputs : natural := 100        --! Network outputs = number of neurons in the present layer
         );
         port(
-            clk      : in  std_logic;	--! Clock input
+            CLK      : in  std_logic;	--! Clock input
             rst      : in  std_logic;	--! Reset output
             start_i  : in  std_logic;	--! Start input, indicates to start the calculation
             input_i  : in  std_logic_vector(inputs - 1 downto 0);--! Network input = ouput of previous layer
@@ -152,7 +153,7 @@ begin
             outputs => outputs_1        --! Network outputs = number of neurons in the present layer
     )
     port map(
-            clk      => clk,	        --! Clock input
+            CLK      => CLK,	        --! Clock input
             rst      => rst,	        --! Reset output
             start_i  => start,        --! Start input, indicates to start the calculation
             input_i  => input_vector,        --! Network input = ouput of previous layer
@@ -167,7 +168,7 @@ begin
             outputs => outputs_2        --! Network outputs = number of neurons in the present layer
     )
     port map(
-            clk      => clk,	        --! Clock input
+            CLK      => CLK,	        --! Clock input
             rst      => rst,	        --! Reset output
             start_i  => start_2,        --! Start input, indicates to start the calculation
             input_i  => input_2,        --! Network input = ouput of previous layer
@@ -177,27 +178,27 @@ begin
                                         -- done_o of previous layer is start_i of the next layer
     );
     
-    layer_inst_3: layer_3 generic map (
-            inputs  => inputs_3,         --! Network inputs = number of neurons in the previous layer
-            outputs => outputs_3        --! Network outputs = number of neurons in the present layer
-    )
-    port map(
-            clk      => clk,	        --! Clock input
-            rst      => rst,	        --! Reset output
-            start_i  => start_3,        --! Start input, indicates to start the calculation
-            input_i  => input_3,        --! Network input = ouput of previous layer
-            weight_i => weight_matrix_3_port,
-            output_o => output_3,
-            done_o   => done_3          --Done output, indicates completion -- signal to the next layer to begin the calculation
-                                        -- done_o of previous layer is start_i of the next layer
-    );
+--    layer_inst_3: layer_3 generic map (
+--            inputs  => inputs_3,         --! Network inputs = number of neurons in the previous layer
+--            outputs => outputs_3        --! Network outputs = number of neurons in the present layer
+--    )
+--    port map(
+--            CLK      => CLK,	        --! Clock input
+--            rst      => rst,	        --! Reset output
+--            start_i  => start_3,        --! Start input, indicates to start the calculation
+--            input_i  => input_3,        --! Network input = ouput of previous layer
+--            weight_i => weight_matrix_3_port,
+--            output_o => output_3,
+--            done_o   => done_3          --Done output, indicates completion -- signal to the next layer to begin the calculation
+--                                        -- done_o of previous layer is start_i of the next layer
+--    );
     
     layer_inst_out: layer_out generic map (
             inputs  => inputs_out,         --! Network inputs = number of neurons in the previous layer
             outputs => outputs_out        --! Network outputs = number of neurons in the present layer
     )
     port map(
-            clk      => clk,	        --! Clock input
+            CLK      => CLK,	        --! Clock input
             rst      => rst,	        --! Reset output
             start_i  => start_out,        --! Start input, indicates to start the calculation
             input_i  => input_out,        --! Network input = ouput of previous layer
@@ -210,10 +211,12 @@ begin
     ---- SIGNALS MAPPING ----   
     start_2 <= done_1;
     input_2 <= output_1;
-    start_3 <= done_2;
-    input_3 <= output_2;
-    start_out <= done_3;
-    input_out <= output_3;
+--    start_3 <= done_2;
+--    input_3 <= output_2;
+--    start_out <= done_3;
+--    input_out <= output_3;
+    start_out <= done_2;
+    input_out <= output_2;
     BNN_output <= find_max_index(output_out, 10);
 
 end architecture;

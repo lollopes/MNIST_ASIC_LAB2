@@ -1,4 +1,5 @@
 library IEEE;
+library work;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.numeric_std.all;
 use work.custom_types.all;
@@ -9,7 +10,7 @@ entity layer_2 is
 		outputs : natural := 100        --! Network outputs = number of neurons in the present layer
 	);
 	port(
-		clk      : in  std_logic;	--! Clock input
+		CLK      : in  std_logic;	--! Clock input
 		rst      : in  std_logic;	--! Reset output
 		start_i  : in  std_logic;	--! Start input, indicates to start the calculation
 		input_i  : in  std_logic_vector(inputs_2 - 1 downto 0);--! Network input = ouput of previous layer
@@ -29,7 +30,7 @@ signal weight_i_internal : weight_matrix_2(outputs_2 -1 downto 0);
 		inputs : integer := 5            --! Number of inputs into the neuron
 	);
 	port(
-		clk      : in  std_logic;        --! Clock input
+		CLK      : in  std_logic;        --! Clock input
 		rst      : in  std_logic;        --! Reset input
 		start_i  : in  std_logic;        --! Start input, indicates to start
 		                                 --! the calculation
@@ -47,7 +48,7 @@ begin
       NEURONS : binary_neuron generic map (
       inputs=>inputs_2)
       port map
-        (clk=>clk, rst =>rst, start_i => start_i, input_i =>input_i, weight_i => weight_i_internal(I), output_o => output_o_internal(I), done_o => done_o);
+        (CLK=>CLK, rst =>rst, start_i => start_i, input_i =>input_i, weight_i => weight_i_internal(I), output_o => output_o_internal(I), done_o => done_o);
    end generate GEN_LAYER_NEURONS;
    
    

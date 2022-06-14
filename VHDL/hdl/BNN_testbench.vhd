@@ -24,11 +24,11 @@ architecture tb of BNN_testbench is
                 layer_out_out_dim: integer:= outputs_out
         );
         port(
-            clk         : in std_logic;
+            CLK         : in std_logic;
             rst         : in std_logic;
             start       : in std_logic;
-            input_vector : in integer_array(layer_1_in_dim-1 downto 0);
-            weight_matrix_1_port : in weight_matrix_integers(layer_1_out_dim-1 downto 0);
+            input_vector : in signed_array(layer_1_in_dim-1 downto 0);
+            weight_matrix_1_port : in weight_matrix_signed(layer_1_out_dim-1 downto 0);
             weight_matrix_2_port : in weight_matrix_2(layer_2_out_dim -1 downto 0);
             weight_matrix_3_port : in weight_matrix_3(layer_3_out_dim -1 downto 0);
             weight_matrix_out_port : in weight_matrix_out(layer_out_out_dim -1 downto 0);
@@ -36,6 +36,7 @@ architecture tb of BNN_testbench is
             BNN_done : out std_logic
         );
     end component BNN;
+
     
     --simulation signals
     signal clk      : std_logic := '0';
@@ -46,6 +47,11 @@ architecture tb of BNN_testbench is
 	signal weight_2_buffer : weight_matrix_2 (0 to outputs_2 -1);
 	signal weight_3_buffer : weight_matrix_3 (0 to outputs_3 -1);
     signal weight_out_buffer : weight_matrix_out (0 to outputs_out -1);
+    
+    --pretty nasty conversion sorry!
+    signal input_buffer_signed    : signed_array(inputs_1 - 1 downto 0);
+    signal weight_1_buffer_signed : weight_matrix_signed (outputs_1 -1 downto 0);
+        
     signal out_buffer   : integer := 0;
     
     --source files signals
@@ -64,8 +70,8 @@ begin
              clk         => clk,
              rst         => rst,
              start       => start_signal,
-             input_vector => input_buffer,
-             weight_matrix_1_port => weight_1_buffer,
+             input_vector => input_buffer_signed,
+             weight_matrix_1_port => weight_1_buffer_signed,
              weight_matrix_2_port => weight_2_buffer,
              weight_matrix_3_port => weight_3_buffer,
              weight_matrix_out_port => weight_out_buffer,
@@ -83,6 +89,32 @@ begin
         wait;
     end process start_stimuli;
     
+    ---- NASTY CONVERSION ----
+    input_vector: process(input_buffer)
+    begin
+        for index in 0 to input_buffer'length-1 loop
+            if input_buffer(index) = 0 then
+                input_buffer_signed(index) <= "00";
+            else
+                input_buffer_signed(index) <= "01";
+            end if;
+        end loop;
+    end process;
+    
+    w1_matrix: process(weight_1_buffer)
+    begin
+        for i in 0 to weight_1_buffer'length-1 loop
+            for j in 0 to inputs_1 - 1 loop
+                if weight_1_buffer(i)(j) = -1 then
+                    weight_1_buffer_signed(i)(j) <= "11";
+                else
+                    weight_1_buffer_signed(i)(j) <= "01";
+                end if;
+            end loop;
+        end loop;
+    end process;
+    
+    
     ---- PROCESSES ----
     
     -- 1. PROCESS FOR READING THE INPUT VECTOR (IMAGE) FROM THE FILE
@@ -97,8 +129,8 @@ begin
         
     begin
      
-        --file_open(file_INPUTS, "/data/home/bnn-prj-15/data_sources/input_number_1_output_8.txt",  read_mode);
-        file_open(file_INPUTS, "E:\Users\jccx1\Documents\TUDelft_projects_root\AI\Lab-2\data_sources\input_number_0_output_0.txt",  read_mode);
+        --file_open(file_INPUTS, "/data/home/bnn-prj-15/data_sources/input_number_2_output_2.txt",  read_mode);
+        file_open(file_INPUTS, "E:\Users\jccx1\Documents\TUDelft_projects_root\AI\Lab-2\data_sources\input_number_2_output_2.txt",  read_mode);
         while not endfile(file_INPUTS) loop
                 readline(file_INPUTS, v_ILINE);    
                 for I in 0 to ROW_BUFF_WIDTH_INPUT-1 loop   

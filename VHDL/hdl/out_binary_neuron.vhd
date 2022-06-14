@@ -1,9 +1,8 @@
 library IEEE;
+library work;
 use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
 use IEEE.numeric_std.all;
-
-
 
 entity out_binary_neuron is
 
@@ -11,7 +10,7 @@ entity out_binary_neuron is
 		inputs : integer := 3            --! Number of inputs into the neuron
 	);
 	port(
-		clk      : in  std_logic;        --! Clock input
+		CLK      : in  std_logic;        --! Clock input
 		rst      : in  std_logic;        --! Reset input
 		start_i  : in  std_logic;        --! Start input, indicates to start
 		                                 --! the calculation
@@ -27,7 +26,7 @@ end out_binary_neuron;
 architecture Behavioral of out_binary_neuron is
     signal index : integer := inputs;
 	type state is (idle, start, acum, act_func, done_state);
-	signal output_s : integer;
+	--signal output_s : integer;
 	signal current_state, next_state : state ;
 	signal input_s, weight_s : std_logic_vector(inputs - 1 downto 0);
 	signal done_s  : std_logic := '0'; 
@@ -36,9 +35,9 @@ architecture Behavioral of out_binary_neuron is
 	 
 begin
 
-	fsm_lower : process(clk) is
+	fsm_lower : process(CLK) is
 	begin
-		if rising_edge(clk) then
+		if rising_edge(CLK) then
 			if rst = '1' then
 				current_state <= idle;
 			else
@@ -48,14 +47,16 @@ begin
 	end process fsm_lower;
 
 	fsm_upper : process(current_state, start_i, input_s, weight_s) is
-	    type  popcount_array is array((inputs-1) downto 0) of std_logic_vector( (inputs-1) downto 0);
+	    type  popcount_array is array((inputs-1) downto 0) of std_logic_vector(7 downto 0);
 		variable popcount : popcount_array;
-		variable temp_vector : std_logic_vector( (inputs-1) downto 0) := (others => '0'); 
+
 	begin
 		case current_state is
 			when idle =>
 				done_s <= '0';
-				output_s <= 0;
+				output_o <= 0;
+				mul_value <= (others => '0');
+				popcount := (others => (others => '0'));
 				if start_i = '1' then
 					next_state <= start;
 				else
@@ -66,28 +67,39 @@ begin
 				for i in 0 to (inputs-1) loop
                       mul_value(i) <= std_logic ( input_s(i) xnor weight_s(i));
                 end loop;
-                output_s <= 0;
+                output_o <= 0;
                 done_s <= '0';
 				next_state <= acum;
+				popcount := (others => (others => '0'));
 
 			when acum =>
-				    temp_vector(0) := mul_value(0);
-				    popcount(0) := temp_vector;
+				    popcount(0) := popcount(0) + mul_value(0);
 				    for j in 1 to (inputs-1) loop 
 					   popcount(j) := popcount(j-1) + mul_value(j);
-					--index <= index -1;
 				    end loop;
-				    output_s <= 0;
+				    output_o <= 0;
 				    next_state <= act_func;
                     done_s <= '0';
+                    mul_value <= (others => '0');
                     
 			when act_func =>
 				done_s     <= '1';
-				output_s <= to_integer(unsigned(popcount(inputs - 1) & '0'))-inputs;
+				output_o <= to_integer(unsigned(popcount(inputs - 1) & '0'))-inputs;
 				next_state <= done_state;
+				mul_value <= (others => '0');
+                popcount := (others => (others => '0'));
+				
              when done_state => 
                 done_s <= '0';
+                next_state <= done_state;
+                mul_value <= (others => '0');
+                popcount := (others => (others => '0'));
+                
              when others =>
+             done_s <= '0';
+             next_state <= idle;
+             mul_value <= (others => '0');
+             popcount := (others => (others => '0'));
 		end case;
 
 	end process fsm_upper;
@@ -95,7 +107,7 @@ begin
     input_s <= input_i;
     weight_s <= weight_i;  
     done_o <= done_s;
-    output_o <= output_s;
+    --output_o <= output_s;
 
 
 
