@@ -13,14 +13,13 @@ entity out_binary_neuron is
 		CLK      : in  std_logic;        --! Clock input
 		rst      : in  std_logic;        --! Reset input
 		start_i  : in  std_logic;        --! Start input, indicates to start
-		                                 --! the calculation
+		last_i   : in  std_logic;
 		input_i  : in  std_logic_vector(inputs - 1 downto 0); --! Neuron inputs
 		weight_i : in  std_logic_vector(inputs -1 downto 0); --! Neuron weights 
 		                                                  
 		output_o : out integer range -inputs to inputs - 1;   --! Neuron output
 		done_o   : out std_logic  := '0' --! Done output, indicates completion
 	);
-	
 end out_binary_neuron;
 
 architecture Behavioral of out_binary_neuron is
@@ -49,7 +48,6 @@ begin
 	fsm_upper : process(current_state, start_i, input_s, weight_s) is
 	    type  popcount_array is array((inputs-1) downto 0) of std_logic_vector(7 downto 0);
 		variable popcount : popcount_array;
-
 	begin
 		case current_state is
 			when idle =>
@@ -85,16 +83,20 @@ begin
 			when act_func =>
 				done_s     <= '1';
 				output_o <= to_integer(unsigned(popcount(inputs - 1) & '0'))-inputs;
-				next_state <= done_state;
+				if last_i = '0' then
+					next_state <= idle;
+				else
+					next_state <= done_state;
+				end if;
 				mul_value <= (others => '0');
                 popcount := (others => (others => '0'));
 				
-             when done_state => 
-                done_s <= '0';
-                next_state <= done_state;
-                mul_value <= (others => '0');
-                popcount := (others => (others => '0'));
-                
+			when done_state =>
+				done_s <= '1';
+				mul_value <= (others => '0');
+				popcount := (others => (others => '0'));    
+				next_state <= done_state;       
+
              when others =>
              done_s <= '0';
              next_state <= idle;

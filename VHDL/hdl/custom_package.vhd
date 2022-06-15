@@ -5,15 +5,19 @@ package custom_types is
   --layer 1
    constant inputs_1 : natural := 784; --fixed to "input_features"
    constant outputs_1 : natural := 100;
+   constant divisor_1 : integer := 100;
   --layer 2   
    constant inputs_2 : natural := 100;
    constant outputs_2 : natural := 100;
+   constant divisor_2 : integer := 1;
   --layer 3  
    constant inputs_3 : natural := 100;
    constant outputs_3 : natural := 100;
+   constant divisor_3 : integer := 1;
   --layer 4  
    constant inputs_out : natural := 100;
    constant outputs_out : natural := 10;  --fixed to "out_features"
+   constant divisor_out : integer := 1;
 	
    type integer_array is array(integer range <> ) of integer;
    type signed_array is array(integer range <> ) of signed(1 downto 0);

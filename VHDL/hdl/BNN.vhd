@@ -217,6 +217,7 @@ begin
                 end if;
         end loop; 
         BNN_output <= index_max;
+        max_value := 0;
     end process;
 
 end architecture;

@@ -12,7 +12,8 @@ entity binary_neuron is
 		clk      : in  std_logic;        --! Clock input
 		rst      : in  std_logic;        --! Reset input
 		start_i  : in  std_logic;        --! Start input, indicates to start
-		                                 --! the calculation
+		last_i   : in  std_logic;
+
 		input_i  : in  std_logic_vector(inputs - 1 downto 0); --! Neuron inputs
 		weight_i : in  std_logic_vector(inputs -1 downto 0); --! Neuron weights 
 		                                                  
@@ -90,20 +91,25 @@ begin
 				done_s     <= '1';
 				if popcount(inputs - 1) >= inputs/2 then
 				--if popcount_v2 >= inputs/2 then
-				    next_state <= done_state;
 			        output_o <= '1';
 			    else 
 			        output_o <= '0';
-				    next_state <= done_state;
                 end if;
+
+				if last_i = '0' then
+					next_state <= idle;
+				else
+					next_state <= done_state;
+				end if;
+
                 mul_value <= (others => '0');
                 popcount := (others => (others => '0'));
-                
-             when done_state => 
-                done_s <= '0';
-                next_state <= done_state;
-                mul_value <= (others => '0');
-                popcount := (others => (others => '0'));
+				
+			when done_state =>
+				done_s <= '0';
+				mul_value <= (others => '0');
+				popcount := (others => (others => '0'));
+				next_state <= done_state;
                 
              when others =>
              done_s <= '0';

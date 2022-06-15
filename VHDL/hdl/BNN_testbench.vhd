@@ -130,7 +130,7 @@ begin
     begin
      
         --file_open(file_INPUTS, "/data/home/bnn-prj-15/data_sources/input_number_2_output_2.txt",  read_mode);
-        file_open(file_INPUTS, "data_sources\input_number_7_output_7.txt",  read_mode);
+        file_open(file_INPUTS, "C:\Users\Ismail\Documents\AI\data_sources\input_number_4_output_8.txt",  read_mode);
         while not endfile(file_INPUTS) loop
                 readline(file_INPUTS, v_ILINE);    
                 for I in 0 to ROW_BUFF_WIDTH_INPUT-1 loop   
@@ -196,7 +196,7 @@ begin
     begin
  
         --file_open(file_VECTORS, "/data/home/bnn-prj-15/data_sources/W_fc2.txt",  read_mode);
-        file_open(file_VECTORS, "data_sources\W_fc2.txt",  read_mode);
+        file_open(file_VECTORS, "C:\Users\Ismail\Documents\AI\data_sources\W_fc2.txt",  read_mode);
 
         while not endfile(file_VECTORS) loop
                 readline(file_VECTORS, v_ILINE);    
@@ -227,7 +227,7 @@ begin
     begin
  
         --file_open(file_VECTORS, "/data/home/bnn-prj-15/data_sources/W_fc3.txt",  read_mode);
-        file_open(file_VECTORS, "data_sources\W_fc3.txt",  read_mode);
+        file_open(file_VECTORS, "C:\Users\Ismail\Documents\AI\data_sources\W_fc3.txt",  read_mode);
         while not endfile(file_VECTORS) loop
                 readline(file_VECTORS, v_ILINE);
                 for I in 0 to ROW_BUFF_WIDTH_HIDDEN-1 loop   
@@ -257,7 +257,7 @@ begin
     begin
  
         --file_open(file_VECTORS, "/data/home/bnn-prj-15/data_sources/W_fc4.txt",  read_mode);
-        file_open(file_VECTORS, "data_sources\W_fc4.txt",  read_mode);        
+        file_open(file_VECTORS, "C:\Users\Ismail\Documents\AI\data_sources\W_fc4.txt",  read_mode);        
         while not endfile(file_VECTORS) loop
                 readline(file_VECTORS, v_ILINE);
                 for I in 0 to ROW_BUFF_WIDTH_HIDDEN-1 loop   

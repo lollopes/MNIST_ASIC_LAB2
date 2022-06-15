@@ -12,6 +12,7 @@ entity integer_neuron is
 		CLK      : in  std_logic;        --! Clock input
 		rst      : in  std_logic;        --! Reset input
 		start_i  : in  std_logic;        --! Start input, indicates to start
+		last_i   : in  std_logic;
 
 		input_i  : in  signed_array(inputs - 1 downto 0); --! Neuron inputs
 		weight_i : in  signed_array(inputs - 1 downto 0); --! Neuron weights 
@@ -23,7 +24,7 @@ end integer_neuron;
 
 architecture logic of integer_neuron is
     --types
-    type state is (idle, start, acum, act_func);
+    type state is (idle, start, acum, act_func, done_state);
     type mult_value_array is array(integer range <> ) of signed(3 downto 0);
     --signals
     signal current_state, next_state : state := idle; 
@@ -44,7 +45,7 @@ begin
 		end if;
 	end process fsm_lower;
 
-	fsm_upper : process(current_state, start_i, input_i, weight_i, mul_value) is
+	fsm_upper : process(current_state, start_i, input_i, weight_i, mul_value, last_i) is
 	
 		variable integer_sum : signed(10 downto 0) := (others => '0');
 		--variable mult_value_element:  signed(3 downto 0) := (others => '0');
@@ -104,15 +105,26 @@ begin
 			when act_func =>
 				done_s     <= '1';
 				if integer_sum >= 0 then
-				    next_state <= idle;
 			        output_s <= '1';
 			    else 
 			        output_s <= '0';
-				    next_state <= idle;
                 end if;
+
+				if last_i = '0' then
+					next_state <= idle;
+				else
+					next_state <= done_state;
+				end if;
 				--mult_value_element := (others => '0');
 				mul_value <= (others => (others => '0'));
 				integer_sum := (others => '0');
+
+			when done_state =>
+				done_s <= '0';
+				mul_value <= (others => (others => '0'));
+				--mult_value_element := (others => '0');
+				integer_sum := (others => '0');
+				next_state <= done_state;					
 				
 
              when others =>
